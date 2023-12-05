@@ -13,6 +13,10 @@ generator client {
 model User {
   id             Int          @id @default(autoincrement())
   email          String       @unique
+  hashedPassword String
+  salt           String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
   firstName      String?
   lastName       String?
   avatar         String?
